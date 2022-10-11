@@ -31,6 +31,7 @@ CRUD Solidity - Smart Contract with Truffle Suite
 :heavy_check_mark: Get Athlete;\
 :heavy_check_mark: Edit Athlete;\
 :heavy_check_mark: Delete Athlete;\
+:heavy_check_mark: Deploy BSC Testnet with Truffle;
 
 ## :rocket: Technologies ##
 
