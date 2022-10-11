@@ -11,8 +11,13 @@ contract StoreAthletes {
         uint8 weight;
     }
 
+    address private immutable owner;
     uint32 private nextId = 0;
     uint32 public count = 0; 
+
+    constructor() {
+        owner = msg.sender;
+    }
 
     function getNextId() private returns(uint32) {
         return ++nextId;
@@ -54,6 +59,8 @@ contract StoreAthletes {
     }
 
     function removeAthlete(uint32 id) public {
+        require(owner == msg.sender, "Caller is not the owner.");
+
         Athlete memory oldAthlete = athletes[id];
         if(bytes(oldAthlete.name).length > 0) {
             delete athletes[id];

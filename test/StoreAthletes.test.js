@@ -55,7 +55,7 @@ contract('StoreAthletes', function(accounts){
             weight: 62
         })
 
-        await contract.removeAthlete(1);
+        await contract.removeAthlete(1, {from: accounts[0]});
 
         const count = await contract.count();
         assert(count.toNumber() === 0, "Couldn't remove athlete!");
